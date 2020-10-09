@@ -1,0 +1,13 @@
+Test Plan and Test Cases
+The test plan of the project involves the following to check for the better performance with optimistic results.
+•	To check the code for any errors or warnings which effect the system.
+•	To check the working of the functions written in the code, like by giving input 1/2/3 it should perform the assigned operation correctly.
+•	To evaluate the time taken to build and run the code.
+Test Cases:
+The movie ticket booking system doesn’t use any user-based test cases. It generally takes the inputs from user and executes the particular task like:
+1.	Selecting the movie
+2.	Number of tickets
+3.	Seat numbers selection
+4.	Confirming the seat number and count
+5.	Purchasing by entering details like name and phone number
+6.	Getting the confirmed receipt of booked tickets

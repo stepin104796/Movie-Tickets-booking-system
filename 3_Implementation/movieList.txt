@@ -1,0 +1,5 @@
+Movie Name   Cost per Ticket   No Seats available
+Fight Club - 	150				100 
+Inception  - 	150			100 
+Star Wars  - 	150			100 
+Sherlock   - 	150			100 
