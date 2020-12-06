@@ -1,22 +1,49 @@
-# Makefile used to compile the movie reservation system
-# Also includes a clean option
+# Name of the project
+PROJECT_NAME = Movie
 
-all: main.o movieList.o ticketList.o
-	@echo '*Compiling program'
-	@gcc -o movies main.o movieList.o ticketList.o
+# Output directory
+BUILD = build
 
-movieList.o: movieList.c 
-	@echo '*Compiling movieList'
-	@gcc -c movieList.c
+# All source code files
+SRC = main.c\
+src/movieList.c
 
-main.o: main.c 
-	@echo '*Compiling main'
-	@gcc -c main.c
+# All test source files
+#TEST_SRC = src/calculator_operations.c\
+#test/test_calculator_operations.c\
+#unity/unity.c\
 
-ticketList.o: ticketList.c
-	@echo '*Compiling ticketList'
-	@gcc -c ticketList.c
+#TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
-clean: 
-	@echo '*Cleaning object and executable files'
-	rm -f *.o movies
+# All include folders with header files
+INC	= -Iinc
+
+
+# Project Output name
+PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
+
+
+# Default target built
+$(PROJECT_NAME):all
+
+# Run the target even if the matching name exists
+.PHONY: run clean test doc all
+
+all: $(SRC) $(BUILD)
+	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out
+
+# Call `make run` to run the application
+run:$(PROJECT_NAME)
+	./$(PROJECT_OUTPUT).out
+
+
+
+
+
+# Remove all the built files, invoke by `make clean`
+clean:
+	rm -rf $(BUILD) 
+
+# Create new build folder if not present
+$(BUILD):
+	mkdir build
